@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanBot Solutions | 공간의 가치를 바꾸는 청소의 미래</title>
+    <meta name="description" content="AI 자율주행과 강력한 흡입력을 결합한 차세대 청소 로봇 솔루션. 가정부터 산업 현장까지 최적의 청소 자동화를 경험하세요.">
+    <meta name="keywords" content="로봇청소기 추천, 자율주행 청소 로봇, 산업용 청소기, 지능형 매핑 로봇">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="overflow: hidden;"> <!-- Lock scroll during intro -->
+    <div id="intro-loader">
+        <div id="intro-robot">
+            <div class="robot-body" style="width: 200px; height: 200px;">
+                <div class="robot-lidar" style="width: 50px; height: 50px;"></div>
+            </div>
+        </div>
+        <div id="intro-curtain"></div>
+        <div id="intro-text">CLEANING YOUR SPACE...</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">CLEANBOT</div>
+        <nav>
+            <ul>
+                <li><a href="#brand">BRAND</a></li>
+                <li><a href="#products">PRODUCTS</a></li>
+                <li><a href="#solutions">SOLUTIONS</a></li>
+                <li><a href="#support">SUPPORT</a></li>
+                <li><a href="board.html">COMMUNITY</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="board.html" class="btn" style="padding: 10px 25px; font-size: 0.9rem;">커뮤니티</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg">
+                <img src="assets/hero.png" alt="Futuristic Cleaning Robot">
+            </div>
+            <div class="hero-content fade-in">
+                <h1>공간의 가치를 바꾸는<br>청소의 미래</h1>
+                <p>LS전선의 신뢰성과 혁신적인 AI 기술이 만나,<br>이전에 없던 깨끗한 세상을 만듭니다.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn">제품 보기</a>
+                    <a href="#tech" class="btn secondary" style="background: transparent; border: 2px solid white; margin-left: 20px;">기술력 확인</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section id="brand" class="highlights">
+            <div class="section-title fade-in">
+                <h2>Why CleanBot?</h2>
+                <p>최첨단 로봇 기술로 완성하는 완벽한 청결</p>
+            </div>
+            <div class="grid-3">
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-brain"></i>
+                    <h3>지능형 매핑 기술</h3>
+                    <p>LIDAR 센서와 AI 알고리즘을 통해 1cm 오차 없는 실시간 공간 매핑과 최적의 경로를 생성합니다.</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-wind"></i>
+                    <h3>강력한 흡입력</h3>
+                    <p>최대 10,000Pa의 흡입력으로 미세먼지부터 큰 이물질까지 완벽하게 제거하는 터보 사이클론 기술.</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-volume-mute"></i>
+                    <h3>저소음 특화 설계</h3>
+                    <p>야간에도 조용하게 구동되는 45dB 이하의 초저소음 기술로 일상의 방해 없이 청결을 유지합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase Section -->
+        <section id="products" class="showcase">
+            <div class="section-title fade-in">
+                <h2 style="text-align: center;">Our Products</h2>
+                <p style="text-align: center;">가정부터 대규모 산업 현장까지 맞춤형 라인업</p>
+            </div>
+            <div class="product-grid">
+                <!-- Home Robot -->
+                <div class="product-card fade-in" onclick="openProductModal('Home S1 Pro')">
+                    <div class="product-img">
+                        <img src="assets/home_robot.png" alt="Home Robot">
+                    </div>
+                    <div class="product-info">
+                        <h3>CleanBot Home Pro</h3>
+                        <p>똑똑한 AI 비전 센서로 사물을 완벽히 회피하는 프리미엄 가정용 로봇청소기.</p>
+                        <button class="btn" style="width: 100%; text-align: center; border: none; cursor: pointer;">상세보기</button>
+                    </div>
+                </div>
+                <!-- Industrial Robot -->
+                <div class="product-card fade-in" onclick="openProductModal('Industrial X-Treme')">
+                    <div class="product-img">
+                        <img src="assets/industrial_robot.png" alt="Industrial Robot">
+                    </div>
+                    <div class="product-info">
+                        <h3>CleanBot Industry X</h3>
+                        <p>공장, 물류 창고 등 대규모 공간을 위한 고성능 산업용 자율주행 청소 로봇.</p>
+                        <button class="btn" style="width: 100%; text-align: center; border: none; cursor: pointer;">상세보기</button>
+                    </div>
+                </div>
+                <!-- Accessories -->
+                <div class="product-card fade-in">
+                    <div class="product-img">
+                        <img src="assets/tech_mapping.png" alt="Accessories">
+                    </div>
+                    <div class="product-info">
+                        <h3>Advanced Sensors</h3>
+                        <p>고정밀 LIDAR와 ToF 센서의 결합으로 빛이 없는 곳에서도 정교한 매핑이 가능합니다.</p>
+                        <a href="#" class="btn" style="width: 100%; text-align: center;">구매하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Specs Comparison Table -->
+        <section class="tech-section" style="background: var(--white);">
+            <div class="section-title fade-in" style="text-align: center;">
+                <h2>Product Comparison</h2>
+                <p>나에게 딱 맞는 모델을 비교해 보세요</p>
+            </div>
+            <div class="fade-in" style="max-width: var(--container-width); margin: 0 auto; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: separate; border-spacing: 0; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
+                    <thead>
+                        <tr style="background: linear-gradient(to right, var(--primary-blue), #00d4ff); color: white;">
+                            <th style="padding: 25px; text-align: left; font-size: 1.1rem;">핵심 사양 비교</th>
+                            <th style="padding: 25px; font-size: 1.1rem;">Home S1 Pro</th>
+                            <th style="padding: 25px; font-size: 1.1rem;">Industrial X-Treme</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 20px; border-bottom: 1px solid #eee; font-weight: 700; color: #444;">최대 흡입력 (Pa)</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee; color: var(--primary-blue); font-weight: 600;">6,500 Pa</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee; color: #ff5722; font-weight: 800;">15,000 Pa</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee; font-weight: 700; color: #444;">스마트 맵핑 센서</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee;">LIDAR + AI Vision 2.0</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee;">Tri-LIDAR + Ultrasonic</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 20px; border-bottom: 1px solid #eee; font-weight: 700; color: #444;">연속 사용 시간</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee;">최대 210분</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee;">최대 600분 (듀얼 배터리)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee; font-weight: 700; color: #444;">소음 제어 기능</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee;">SilentFlow™ (42dB)</td>
+                            <td style="padding: 20px; border-bottom: 1px solid #eee;">High-Efficiency (68dB)</td>
+                        </tr>
+                        <tr style="background: #fafafa;">
+                            <td style="padding: 20px; font-weight: 700; color: #444;">특화 기능</td>
+                            <td style="padding: 20px;">물걸레 자동 세척 및 건조</td>
+                            <td style="padding: 20px;">대용량 10L 오물 자동 압축</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tech & Solutions Section -->
+        <section id="solutions" class="tech-section">
+            <div class="tech-flex fade-in">
+                <div class="tech-text">
+                    <h2>AI 자율주행 알고리즘</h2>
+                    <p>복잡한 장애물을 실시간으로 인식하고 최단 경로를 계산합니다. 수만 번의 딥러닝 학습을 거친 알고리즘은 시간이 갈수록 더욱 효율적인 청소 경험을 제공합니다.</p>
+                    <ul style="margin-top: 20px;">
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> 실시간 다이내믹 맵 업데이트</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> 추락 방지 및 가구 손상 방지</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> 다층 구조 자동 인식</li>
+                    </ul>
+                </div>
+                <div class="tech-image">
+                    <img src="assets/lidar_tech.png" alt="AI Mapping">
+                </div>
+            </div>
+
+            <div class="tech-flex fade-in">
+                <div class="tech-text">
+                    <h2>스마트 듀얼 브러시 시스템</h2>
+                    <p>바닥 재질을 자동으로 감지하여 브러시 속도와 높이를 조절합니다. 카페트 위에서는 더 강력하게, 마루 바닥에서는 부드럽게 청소하여 바닥 손상을 최소화하면서도 오염물은 완벽히 제거합니다.</p>
+                    <div style="margin-top: 15px; display: flex; gap: 15px;">
+                         <img src="assets/home_robot.png" style="width: 100px; height: 100px; border-radius: 10px; object-fit: cover;">
+                         <img src="assets/industrial_robot.png" style="width: 100px; height: 100px; border-radius: 10px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="tech-image">
+                    <img src="assets/lifestyle_room.png" alt="Brush System">
+                </div>
+            </div>
+
+            <div class="tech-flex fade-in" id="tech">
+                <div class="tech-text">
+                    <h2>스마트 앱 연동 제어</h2>
+                    <p>외출 중에도 스마트폰 하나로 집안 구석구석을 확인하고 청소를 예약하세요. 직관적인 앱 인터페이스를 통해 구역 지정 청소, 금지 구역 설정이 가능합니다.</p>
+                    <div style="margin-top: 30px;">
+                        <a href="#" class="btn" style="background: #000;"><i class="fab fa-apple" style="margin-right: 10px;"></i> App Store</a>
+                        <a href="#" class="btn" style="background: #222; margin-left: 10px;"><i class="fab fa-google-play" style="margin-right: 10px;"></i> Google Play</a>
+                    </div>
+                </div>
+                <div class="tech-image">
+                    <img src="assets/app_usage.png" alt="Mobile App UI">
+                </div>
+            </div>
+        </section>
+        <!-- Live Cleaning Demo Section -->
+        <!-- Technology Deep Dive -->
+    <section id="tech-deep-dive" class="tech-section" style="background: white; padding: 100px 5%;">
+        <div class="section-title fade-in" style="text-align: center; margin-bottom: 60px;">
+            <h2>Next-Gen Technology</h2>
+            <p>더 깊게, 더 똑똑하게. Antigravity의 핵심 기술을 클릭하여 확인하세요.</p>
+        </div>
+        
+        <div class="tech-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: var(--container-width); margin: 0 auto;">
+            <div class="tech-card" style="text-align: center; cursor: pointer;" onclick="openProductModal('Precision LIDAR')">
+                <img src="assets/lidar_tech.png" alt="LIDAR Tech" style="width: 100%; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                <h3>Precision LIDAR 2.0</h3>
+                <p>1초당 10,000회의 레이저 측정을 통해 오차 없는 3D 맵핑을 구현합니다.</p>
+            </div>
+            <div class="tech-card" style="text-align: center; cursor: pointer;" onclick="openProductModal('App Intelligence')">
+                <img src="assets/app_usage.png" alt="App Control" style="width: 100%; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                <h3>Total Control App</h3>
+                <p>언제 어디서나 실시간 청소 상태를 확인하고, 금지 구역을 설정할 수 있습니다.</p>
+            </div>
+            <div class="tech-card" style="text-align: center;">
+                <img src="assets/lifestyle_room.png" alt="Lifestyle" style="width: 100%; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                <h3>Seamless Integration</h3>
+                <p>당신의 라이프스타일에 완벽하게 녹아드는 미니멀한 디자인과 지능형 청소 경험.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Excellence (Exploded View) -->
+    <section id="engineering" class="tech-section" style="background: #0a0a0a; color: white; padding: 120px 5%; overflow: hidden;">
+        <div class="section-title fade-in" style="text-align: center; margin-bottom: 80px;">
+            <h2 style="color: white; font-size: 3rem;">Engineering Excellence</h2>
+            <p style="color: #aaa; font-size: 1.2rem;">세밀한 공학적 설계를 통해 완성된 압도적인 퍼포먼스.</p>
+        </div>
+        
+        <div class="engineering-container" style="display: flex; align-items: center; gap: 60px; max-width: var(--container-width); margin: 0 auto; position: relative;">
+            <div class="engineering-image fade-in" style="flex: 1.5; position: relative;">
+                <img src="assets/exploded_view.png" alt="Exploded View" style="width: 100%; border-radius: 30px; box-shadow: 0 0 100px rgba(0, 188, 212, 0.3);">
+                
+                <!-- Hotspots -->
+                <div class="hotspot" style="top: 20%; left: 30%;" data-text="360˚ Precision LIDAR: 초당 1만회 스캔"></div>
+                <div class="hotspot" style="top: 50%; left: 50%;" data-text="Ultra-Torque Motor: 업계 최대 15,000Pa"></div>
+                <div class="hotspot" style="top: 80%; left: 40%;" data-text="Dual Brush System: 엉킴 방지 특수 설계"></div>
+            </div>
+            
+            <div class="engineering-specs fade-in" style="flex: 1;">
+                <div class="eng-item" style="margin-bottom: 40px; border-left: 4px solid var(--primary-blue); padding-left: 25px;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 10px;">LIDAR Intelligence</h3>
+                    <p style="color: #ccc;">주변 환경을 1cm 단위로 인식하여 가장 효율적인 경로를 생성합니다. 어두운 밤에도 정확한 위치 파악이 가능합니다.</p>
+                </div>
+                <div class="eng-item" style="margin-bottom: 40px; border-left: 4px solid var(--primary-blue); padding-left: 25px;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 10px;">Suction Powerhouse</h3>
+                    <p style="color: #ccc;">항공기 엔진 기술을 접목한 고출력 모터가 미세먼지부터 바닥 틈새 오염물까지 남김없이 빨아들입니다.</p>
+                </div>
+                <div class="eng-item" style="margin-bottom: 40px; border-left: 4px solid var(--primary-blue); padding-left: 25px;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 10px;">HEPA Filtration</h3>
+                    <p style="color: #ccc;">3중 필터 시스템이 0.3미크론의 미세먼지를 99.9% 걸러내어 청정한 공기만을 배출합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulation -->
+    <section id="demo" class="tech-section" style="background: #f0f4f8; overflow: hidden; padding: 100px 5%;">
+            <div class="section-title fade-in" style="text-align: center;">
+                <h2>Live Cleaning Simulation</h2>
+                <p>로봇 청소기가 공간을 누비며 청소하는 모습을 확인하세요</p>
+            </div>
+            <div class="demo-container fade-in" style="background: white;">
+                <div class="cleaning-floor">
+                    <canvas id="cleaningTrail" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 1; pointer-events: none; opacity: 0.6;"></canvas>
+                    <!-- Furniture -->
+                    <div class="furniture closet" style="top: 20px; left: 20px; width: 140px; height: 350px;"></div>
+                    <div class="furniture bed" style="top: 20px; right: 150px; width: 450px; height: 180px; transform: rotate(0deg);">
+                        <div class="pillow" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%) rotate(90deg);"></div>
+                        <div class="blanket" style="position: absolute; left: 0; width: 60%; height: 100%; border-radius: 10px 0 0 10px;"></div>
+                    </div>
+                    <div class="furniture sideboard" style="top: 20px; right: 20px; width: 130px; height: 400px;"></div>
+                    <div class="furniture rug" style="top: 220px; right: 180px; width: 400px; height: 180px;"></div>
+                    <div class="furniture desk" style="bottom: 20px; right: 150px; width: 500px; height: 100px;"></div>
+                    <div class="furniture plant" style="top: 30px; right: 40px; z-index: 10;"></div>
+                    
+                    <div class="robot-vacuum" id="simRobot">
+                        <div class="robot-gaze"></div>
+                        <div class="robot-body">
+                            <div class="robot-lidar"></div>
+                            <div class="robot-sensor"></div>
+                        </div>
+                        <div class="vacuum-light"></div>
+                    </div>
+                    <div class="dust-particles">
+                        <!-- Group 1: Start/Bottom area (0-4s) -->
+                        <div class="dust" style="top: 85%; left: 30%; animation-delay: 2s;"></div>
+                        <div class="dust" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
+                        <div class="dust" style="top: 90%; left: 65%; animation-delay: 4s;"></div>
+                        
+                        <!-- Group 2: Right/Middle area (4-8s) -->
+                        <div class="dust" style="top: 60%; left: 80%; animation-delay: 6s;"></div>
+                        <div class="dust" style="top: 40%; left: 85%; animation-delay: 7s;"></div>
+                        <div class="dust" style="top: 70%; left: 75%; animation-delay: 5s;"></div>
+                        
+                        <!-- Group 3: Center/Rug area (8-12s) -->
+                        <div class="dust" style="top: 55%; left: 50%; animation-delay: 9s;"></div>
+                        <div class="dust" style="top: 50%; left: 30%; animation-delay: 10s;"></div>
+                        <div class="dust" style="top: 45%; left: 40%; animation-delay: 11s;"></div>
+                        
+                        <!-- Group 4: Top/Sofa area (12-16s) -->
+                        <div class="dust" style="top: 20%; left: 25%; animation-delay: 13s;"></div>
+                        <div class="dust" style="top: 15%; left: 45%; animation-delay: 14s;"></div>
+                        <div class="dust" style="top: 25%; left: 60%; animation-delay: 15s;"></div>
+                        
+                        <!-- More scattered dust -->
+                        <div class="dust" style="top: 75%; left: 15%; animation-delay: 1s;"></div>
+                        <div class="dust" style="top: 10%; left: 10%; animation-delay: 12s;"></div>
+                        <div class="dust" style="top: 35%; left: 15%; animation-delay: 12.5s;"></div>
+                        <div class="dust" style="top: 80%; left: 40%; animation-delay: 18s;"></div>
+                        <div class="dust" style="top: 40%; left: 70%; animation-delay: 8s;"></div>
+                        <div class="dust" style="top: 90%; left: 80%; animation-delay: 4.5s;"></div>
+                        <div class="dust" style="top: 30%; left: 80%; animation-delay: 15.5s;"></div>
+                        <div class="dust" style="top: 65%; left: 25%; animation-delay: 9.5s;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lifestyle Gallery -->
+    <section id="gallery" class="tech-section" style="background: white; padding: 100px 5%;">
+        <div class="section-title fade-in" style="text-align: center; margin-bottom: 50px;">
+            <h2>Lifestyle Highlights</h2>
+            <p>일상 속에 자연스럽게 스며드는 Antigravity를 만나보세요.</p>
+        </div>
+        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: var(--container-width); margin: 0 auto;">
+            <div class="gallery-item fade-in" style="border-radius: 15px; overflow: hidden; height: 350px;">
+                <img src="assets/lifestyle_room.png" alt="Living Room" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="gallery-item fade-in" style="border-radius: 15px; overflow: hidden; height: 350px;">
+                <img src="assets/lidar_tech.png" alt="Tech" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="gallery-item fade-in" style="border-radius: 15px; overflow: hidden; height: 350px;">
+                <img src="assets/app_usage.png" alt="Apps" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProductModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle">Product Title</h2>
+                    <p id="modalDesc" style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">Description goes here.</p>
+                    <div class="modal-specs">
+                        <h3>상세 제원</h3>
+                        <ul id="modalSpecsList">
+                            <!-- Specs injected by JS -->
+                        </ul>
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <button class="cta-btn primary" style="width: 100%;">상담 신청하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>CLEANBOT</h2>
+                <p>우리는 로봇 기술을 통해 사람들에게 더 여유로운 삶과 깨끗한 환경을 선물합니다. LS전선의 기술 파트너십으로 완성된 신뢰의 가치.</p>
+            </div>
+            <div class="footer-links">
+                <h4>PRODUCTS</h4>
+                <ul>
+                    <li><a href="#">Home Series</a></li>
+                    <li><a href="#">Industrial Series</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="#">사용 설명서</a></li>
+                    <li><a href="#">FAQ / AS 접수</a></li>
+                    <li><a href="#">펌웨어 업데이트</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li>서울시 강남구 테헤란로 123</li>
+                    <li>02-1234-5678</li>
+                    <li>support@cleanbot.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 CLEANBOT Solutions. All rights reserved. Designed for Excellence.
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 900px; padding: 0; overflow: hidden; border-radius: 20px;">
+            <span class="close-modal" onclick="closeProductModal()" style="top: 20px; right: 30px; font-size: 2rem; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); z-index: 10;">&times;</span>
+            <div id="productDetailContent" style="display: flex; flex-direction: column;">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        const productData = {
+            home: {
+                title: "CleanBot Home Pro",
+                tagline: "집안의 모든 구석을 완벽하게 이해하는 AI 집사",
+                img: "assets/home_robot.png",
+                desc: "CleanBot Home Pro는 최신 AI 비전 센서와 LIDAR 기술을 결합하여 가구의 위치뿐만 아니라 전선, 애완동물의 배설물 등 아주 작은 장애물까지 인식하여 회피합니다. 스마트 연동을 통해 외출 중에도 집안을 모니터링할 수 있으며, 6,000Pa의 강력한 흡입력은 카펫 속 미세먼지까지 놓치지 않습니다.",
+                specs: [
+                    "흡입력: 6,000 Pa",
+                    "배터리: 5,200 mAh (180분 연속 사용)",
+                    "센서: LIDAR + RGB AI Vision + ToF",
+                    "기능: 물걸레 자동 세척 및 건조 지원"
+                ]
+            },
+            industry: {
+                title: "CleanBot Industry X",
+                tagline: "대규모 산업 현장을 위한 무인 청소 솔루션",
+                img: "assets/industrial_robot.png",
+                desc: "CleanBot Industry X는 공장, 창고, 대형 쇼핑몰 등 극한의 환경에서도 24시간 중단 없는 청소를 지원합니다. 다중 LIDAR 시스템으로 실시간 동적 장애물을 회피하며, 25,000mAh의 초대용량 배터리는 복잡한 환경에서도 최장 8시간 동안 구동됩니다. 스마트 관제 시스템과 연동하여 여러 대의 로봇을 효율적으로 관리할 수 있습니다.",
+                specs: [
+                    "흡입력: 12,000 Pa",
+                    "배터리: 25,000 mAh (480분 연속 사용)",
+                    "센서: Quad-LIDAR + Ultrasonic + GPS",
+                    "기능: 자동 오물 탱크 비움 및 급수 지원"
+                ]
+            }
+        };
+
+        function openProductModal(type) {
+            const data = productData[type];
+            if (!data) return;
+
+            const modal = document.getElementById('productModal');
+            const content = document.getElementById('productDetailContent');
+
+            content.innerHTML = `
+                <div style="height: 350px; position: relative;">
+                    <img src="${data.img}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; padding: 40px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; width: 100%;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">${data.title}</h2>
+                        <p style="font-size: 1.1rem; opacity: 0.9;">${data.tagline}</p>
+                    </div>
+                </div>
+                <div style="padding: 40px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px;">
+                    <div>
+                        <h3 style="margin-bottom: 20px; font-size: 1.5rem;">제품 소개</h3>
+                        <p style="line-height: 1.8; color: #555;">${data.desc}</p>
+                    </div>
+                    <div style="background: var(--light-gray); padding: 30px; border-radius: 15px;">
+                        <h3 style="margin-bottom: 20px; font-size: 1.3rem;">주요 사양</h3>
+                        <ul style="list-style: none;">
+                            ${data.specs.map(spec => `<li style="margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> ${spec}</li>`).join('')}
+                        </ul>
+                        <button class="btn" style="width: 100%; margin-top: 30px; background: var(--primary-blue);">구매 상담하기</button>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeProductModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        // --- Modal Logic ---
+        const productsData = {
+            'Home S1 Pro': {
+                title: 'Antigravity Home S1 Pro',
+                desc: '완벽한 자율성을 가진 가정용 플래그십 모델입니다. HyperSuction 기술로 미세먼지까지 완벽하게 제거하며, 물걸레 자동 세척 스테이션이 포함되어 진정한 핸즈프리 청소를 구현합니다.',
+                img: 'assets/home_robot.png',
+                specs: [
+                    '최대 흡입력: 6,500 Pa',
+                    '주행 센서: 360˚ LIDAR + AI 듀얼 비전',
+                    '사용 시간: 최대 210분 (에코 모드)',
+                    '부가 기능: 물걸레 자동 온수 세척, 고온 건조',
+                    '먼지통 비움: 3L 더스트백 자동 비움'
+                ]
+            },
+            'Industrial X-Treme': {
+                title: 'Antigravity Industrial X-Treme',
+                desc: '공장, 대형 쇼핑몰, 공항 등을 위한 압도적 성능의 산업용 솔루션입니다. 2개의 대용량 배터리를 병렬로 사용하여 하루 종일 끊김 없는 청소가 가능하며, 거친 환경에서도 견디는 내구성을 자랑합니다.',
+                img: 'assets/industrial_robot.png',
+                specs: [
+                    '최대 흡입력: 15,000 Pa',
+                    '주행 센서: Multi-LIDAR + 초음파 근접 센서',
+                    '사용 시간: 최대 10시간 (듀얼 배터리)',
+                    '오물 수거: 10L 고용량 탱크 (자동 압축 기능)',
+                    '등반 능력: 최대 35mm 방지턱 및 문턱 통과'
+                ]
+            },
+            'Precision LIDAR': {
+                title: 'Next-Gen LIDAR 2.0',
+                desc: '초당 10,000회 이상의 레이저 펄스를 발사하여 공간을 초당 360도 스캔합니다. 어두운 밤이나 복잡한 가구 배치 속에서도 오차 없는 3D 지도를 생성하는 핵심 기술입니다.',
+                img: 'assets/lidar_tech.png',
+                specs: [
+                    '스캔 속도: 10Hz (초당 360도)',
+                    '측정 정밀도: ±5mm 미만',
+                    '탐지 거리: 최대 12m',
+                    'AI 연동: 실시간 장애물 분류 알고리즘 탑제'
+                ]
+            },
+            'App Intelligence': {
+                title: 'App Intelligence & Control',
+                desc: '언제 어디서나 당신의 공간을 관리하세요. 실시간 청소 경로 확인은 물론, 가상 벽 설치, 구역별 흡입력 조절, 물걸레 금지 구역 설정 등 모든 것이 손끝에서 이루어집니다.',
+                img: 'assets/app_usage.png',
+                specs: [
+                    '플랫폼: iOS / Android 완벽 지원',
+                    '연결: Dual-Band Wi-Fi 6 지원',
+                    '기능: 실시간 실내 지도 렌더링',
+                    '공유: 가족 구성원 다중 제어 기능'
+                ]
+            }
+        };
+
+        function openProductModal(name) {
+            const product = productsData[name];
+            if (!product) return;
+
+            document.getElementById('modalTitle').innerText = product.title;
+            document.getElementById('modalDesc').innerText = product.desc;
+            document.getElementById('modalImg').src = product.img;
+            
+            const specsList = document.getElementById('modalSpecsList');
+            specsList.innerHTML = product.specs.map(s => `<li><i class="fas fa-check"></i> ${s}</li>`).join('');
+
+            const modal = document.getElementById('productModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Scroll lock
+            
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Close on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target == modal) {
+                closeProductModal();
+            }
+        }
+
+        // --- Cleaning Simulation Logic ---
+        function initCleaningSim() {
+            const floor = document.querySelector('.cleaning-floor');
+            const robot = document.querySelector('#simRobot');
+            const furniture = document.querySelectorAll('.furniture');
+            const particleCount = 60;
+            
+            const dustGroup = document.querySelector('.dust-particles');
+            dustGroup.innerHTML = ''; 
+            const dusts = [];
+            
+            function isOverFurniture(x, y, padding = 10) {
+                for (let f of furniture) {
+                    const rect = f.getBoundingClientRect();
+                    const containerRect = floor.getBoundingClientRect();
+                    const fx = rect.left - containerRect.left;
+                    const fy = rect.top - containerRect.top;
+                    const fw = rect.width;
+                    const fh = rect.height;
+
+                    if (x > fx - padding && x < fx + fw + padding && y > fy - padding && y < fy + fh + padding) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            // Init Dust
+            const trailCanvas = document.getElementById('cleaningTrail');
+            trailCanvas.width = floor.clientWidth;
+            trailCanvas.height = floor.clientHeight;
+
+            const containerRect = floor.getBoundingClientRect();
+            for (let i = 0; i < particleCount; i++) {
+                let attempts = 0, x, y;
+                do {
+                    x = Math.random() * (containerRect.width - 200) + 40; // Avoid far right
+                    y = Math.random() * (containerRect.height - 40) + 20;
+                } while (isOverFurniture(x, y) && attempts++ < 50);
+
+                const dust = document.createElement('div');
+                dust.className = 'dust';
+                dust.style.left = (x / containerRect.width) * 100 + '%';
+                dust.style.top = (y / containerRect.height) * 100 + '%';
+                dustGroup.appendChild(dust);
+                dusts.push(dust);
+            }
+
+            // Robot State
+            let rx = 100, ry = 400, angle = 0;
+            let tx = rx, ty = ry;
+            
+            function getNewTarget() {
+                // Find closest uncleaned dust
+                let closestDist = Infinity;
+                let foundDust = null;
+
+                dusts.forEach(dust => {
+                    if (dust.style.opacity === '1' || dust.style.opacity === '') {
+                        const dustRect = dust.getBoundingClientRect();
+                        const containerPos = floor.getBoundingClientRect();
+                        const dx = (dustRect.left + 6) - (containerPos.left + rx);
+                        const dy = (dustRect.top + 6) - (containerPos.top + ry);
+                        const dist = Math.sqrt(dx*dx + dy*dy);
+                        if (dist < closestDist) {
+                            closestDist = dist;
+                            foundDust = dust;
+                        }
+                    }
+                });
+
+                if (foundDust) {
+                    const rect = foundDust.getBoundingClientRect();
+                    const containerPos = floor.getBoundingClientRect();
+                    tx = (rect.left + 6) - containerPos.left;
+                    ty = (rect.top + 6) - containerPos.top;
+                } else {
+                    // All cleaned? Random explore
+                    let attempts = 0;
+                    do {
+                        tx = Math.random() * (containerRect.width - 100) + 50;
+                        ty = Math.random() * (containerRect.height - 100) + 50;
+                    } while (isOverFurniture(tx, ty, 50) && attempts++ < 100);
+                }
+            }
+
+            function updateRobot() {
+                const dx = tx - rx;
+                const dy = ty - ry;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+
+                if (dist < 15) {
+                    getNewTarget();
+                } else {
+                    const targetAngle = Math.atan2(dy, dx) * 180 / Math.PI;
+                    let diff = targetAngle - angle;
+                    while (diff < -180) diff += 360;
+                    while (diff > 180) diff -= 360;
+                    
+                    // Slightly faster rotation for more responsive turns
+                    angle += diff * 0.1;
+
+                    // Only move if we are somewhat facing the target to avoid spinning in orbit
+                    if (Math.abs(diff) < 45) {
+                        rx += Math.cos(angle * Math.PI / 180) * 1.5;
+                        ry += Math.sin(angle * Math.PI / 180) * 1.5;
+                    }
+                }
+
+                robot.style.left = rx + 'px';
+                robot.style.top = ry + 'px';
+                robot.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+                
+                const currentRobotRect = robot.getBoundingClientRect();
+                const radiusThreshold = currentRobotRect.width / 2;
+
+                // Draw cleaning trail
+                const ctx = trailCanvas.getContext('2d');
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+                ctx.beginPath();
+                ctx.arc(rx, ry, radiusThreshold, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Cleaning check
+                let cleanedCount = 0;
+                dusts.forEach(dust => {
+                    if (dust.style.opacity === '0') {
+                        cleanedCount++;
+                        return;
+                    }
+                    const dustRect = dust.getBoundingClientRect();
+                    const containerPos = floor.getBoundingClientRect();
+                    const dx_d = (dustRect.left + dustRect.width/2) - (containerPos.left + rx);
+                    const dy_d = (dustRect.top + dustRect.height/2) - (containerPos.top + ry);
+                    if (Math.sqrt(dx_d*dx_d + dy_d*dy_d) < radiusThreshold + 5) {
+                        dust.style.opacity = '0';
+                        dust.style.transform = 'scale(0)';
+                        cleanedCount++;
+                    }
+                });
+
+                requestAnimationFrame(updateRobot);
+            }
+
+            function handleResize() {
+                const rect = floor.getBoundingClientRect();
+                trailCanvas.width = floor.clientWidth;
+                trailCanvas.height = floor.clientHeight;
+                // Keep robot in bounds
+                if (rx > trailCanvas.width) rx = trailCanvas.width - 50;
+                if (ry > trailCanvas.height) ry = trailCanvas.height - 50;
+            }
+            window.addEventListener('resize', handleResize);
+            handleResize();
+
+            getNewTarget();
+            updateRobot();
+            
+            setInterval(() => {
+                dusts.forEach(dust => { dust.style.opacity = '1'; dust.style.transform = 'scale(1)'; });
+                const ctx = trailCanvas.getContext('2d');
+                ctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+            }, 30000);
+        }
+
+        // Initialize when section is in view
+        document.addEventListener('DOMContentLoaded', () => {
+            initCleaningSim();
+
+            // Scroll Reveal Logic
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // Intro Reveal Logic
+            setTimeout(() => {
+                const loader = document.getElementById('intro-loader');
+                const robot = document.getElementById('intro-robot');
+                const curtain = document.getElementById('intro-curtain');
+                
+                robot.style.left = '120%';
+                curtain.style.width = '0';
+                
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.remove();
+                        document.body.style.overflow = 'auto'; // Unlock scroll
+                    }, 500);
+                }, 3000); // Wait for 3s cleanup
+            }, 500);
+        });
+
+        // Close on background click
+        window.onclick = function(event) {
+            const pm = document.getElementById('productModal');
+            if (event.target == pm) {
+                pm.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

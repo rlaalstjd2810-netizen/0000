@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 | CleanBot Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .board-container {
+            max-width: var(--container-width);
+            margin: 150px auto 100px;
+            padding: 0 5%;
+        }
+
+        .board-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 20px;
+        }
+
+        .board-header h1 {
+            font-size: 2.5rem;
+            color: var(--black);
+        }
+
+        .board-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .board-table th {
+            background-color: var(--light-gray);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .board-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid #eee;
+            transition: 0.2s;
+        }
+
+        .board-table tr:hover td {
+            background-color: rgba(0, 74, 153, 0.02);
+            cursor: pointer;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 200px;
+            resize: none;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .post-detail-content {
+            line-height: 1.8;
+            margin: 30px 0;
+            white-space: pre-wrap;
+        }
+
+        .detail-meta {
+            color: #888;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .board-table th:nth-child(3),
+            .board-table td:nth-child(3),
+            .board-table th:nth-child(4),
+            .board-table td:nth-child(4) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">CLEANBOT</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html#brand">BRAND</a></li>
+                <li><a href="index.html#products">PRODUCTS</a></li>
+                <li><a href="index.html#solutions">SOLUTIONS</a></li>
+                <li><a href="index.html#support">SUPPORT</a></li>
+                <li><a href="board.html" class="active" style="color: var(--primary-blue);">COMMUNITY</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="board.html" class="btn" style="padding: 10px 25px; font-size: 0.9rem;">커뮤니티</a>
+        </div>
+    </header>
+
+    <main class="board-container">
+        <div class="board-header">
+            <div>
+                <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 5px;">USER REVIEWS & TIPS</p>
+                <h1>커뮤니티 게시판</h1>
+            </div>
+            <button class="btn" onclick="openWriteModal()"><i class="fas fa-pen" style="margin-right: 10px;"></i>글쓰기</button>
+        </div>
+
+        <table class="board-table">
+            <thead>
+                <tr>
+                    <th style="width: 80px;">번호</th>
+                    <th>제목</th>
+                    <th style="width: 120px;">작성자</th>
+                    <th style="width: 150px;">날짜</th>
+                    <th style="width: 100px;">조회수</th>
+                </tr>
+            </thead>
+            <tbody id="board-body">
+                <!-- Posts injected by JS -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Write/Edit Modal -->
+    <div id="writeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('writeModal')">&times;</span>
+            <h2 id="modalTitle">게시글 작성</h2>
+            <form id="postForm" style="margin-top: 20px;">
+                <input type="hidden" id="postId">
+                <div class="form-group">
+                    <label>제목</label>
+                    <input type="text" id="title" required placeholder="제목을 입력하세요">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>작성자</label>
+                        <input type="text" id="author" required placeholder="닉네임을 입력하세요">
+                    </div>
+                    <div class="form-group">
+                        <label>비밀번호 (수정/삭제용)</label>
+                        <input type="password" id="password" required placeholder="비밀번호 설정">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>내용</label>
+                    <textarea id="content" required placeholder="내용을 입력하세요"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn secondary" style="background: #999;" onclick="closeModal('writeModal')">취소</button>
+                    <button type="submit" class="btn">저장하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('detailModal')">&times;</span>
+            <h2 id="detailTitle">제목</h2>
+            <div class="detail-meta">
+                작성자: <span id="detailAuthor"></span> | 날짜: <span id="detailDate"></span> | 조회수: <span id="detailViews"></span>
+            </div>
+            <div id="detailContent" class="post-detail-content">내용</div>
+            <div class="modal-footer">
+                <button class="btn secondary" style="background: #e74c3c;" onclick="handleDeleteAction()">삭제</button>
+                <button class="btn" style="background: var(--primary-blue);" onclick="handleEditAction()">수정</button>
+                <button class="btn" style="background: #666;" onclick="closeModal('detailModal')">목록으로</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let posts = JSON.parse(localStorage.getItem('cleanbot_posts')) || [
+            { id: 1, title: "CleanBot 덕분에 주말이 여유로워졌습니다.", author: "행복해", content: "진짜 너무 편해요...", date: "2026.05.07", views: 215, password: "1234" },
+            { id: 2, title: "산업용 로봇 유지보수 가이드 공유합니다.", author: "CS팀장", content: "관리 비법은 바로...", date: "2026.05.05", views: 567, password: "1234" }
+        ];
+
+        let currentPostId = null;
+
+        function renderBoard() {
+            const body = document.getElementById('board-body');
+            body.innerHTML = '';
+            
+            posts.sort((a,b) => b.id - a.id).forEach((post, index) => {
+                const tr = document.createElement('tr');
+                tr.onclick = () => viewPost(post.id);
+                tr.innerHTML = `
+                    <td>${post.id}</td>
+                    <td><span class="post-title">${post.title}</span></td>
+                    <td>${post.author}</td>
+                    <td class="post-meta">${post.date}</td>
+                    <td class="post-meta">${post.views}</td>
+                `;
+                body.appendChild(tr);
+            });
+            localStorage.setItem('cleanbot_posts', JSON.stringify(posts));
+        }
+
+        function openWriteModal() {
+            document.getElementById('modalTitle').innerText = '게시글 작성';
+            document.getElementById('postForm').reset();
+            document.getElementById('postId').value = '';
+            document.getElementById('writeModal').style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        document.getElementById('postForm').onsubmit = function(e) {
+            e.preventDefault();
+            const id = document.getElementById('postId').value;
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const password = document.getElementById('password').value;
+            const content = document.getElementById('content').value;
+            const date = new Date().toLocaleDateString('ko-KR').replace(/ /g, '').slice(0, -1);
+
+            if (id) {
+                // Edit - Check password again just in case (though we checked before opening modal)
+                const index = posts.findIndex(p => p.id == id);
+                if (posts[index].password !== password) {
+                    alert('비밀번호가 일치하지 않습니다.');
+                    return;
+                }
+                posts[index] = { ...posts[index], title, author, content };
+            } else {
+                // Create
+                const newId = posts.length > 0 ? Math.max(...posts.map(p => p.id)) + 1 : 1;
+                posts.push({ id: newId, title, author, content, date, password, views: 0 });
+            }
+
+            renderBoard();
+            closeModal('writeModal');
+        };
+
+        function viewPost(id) {
+            currentPostId = id;
+            const post = posts.find(p => p.id == id);
+            post.views++;
+            
+            document.getElementById('detailTitle').innerText = post.title;
+            document.getElementById('detailAuthor').innerText = post.author;
+            document.getElementById('detailDate').innerText = post.date;
+            document.getElementById('detailViews').innerText = post.views;
+            document.getElementById('detailContent').innerText = post.content;
+            
+            document.getElementById('detailModal').style.display = 'flex';
+            renderBoard();
+        }
+
+        function handleEditAction() {
+            const post = posts.find(p => p.id == currentPostId);
+            const inputPw = prompt('게시글 비밀번호를 입력하세요.');
+            
+            if (inputPw === post.password) {
+                openEditModal(post);
+            } else {
+                alert('비밀번호가 틀렸습니다.');
+            }
+        }
+
+        function handleDeleteAction() {
+            const post = posts.find(p => p.id == currentPostId);
+            const inputPw = prompt('삭제를 위해 비밀번호를 입력하세요.');
+            
+            if (inputPw === post.password) {
+                if (confirm('정말 삭제하시겠습니까?')) {
+                    posts = posts.filter(p => p.id != currentPostId);
+                    renderBoard();
+                    closeModal('detailModal');
+                }
+            } else {
+                alert('비밀번호가 틀렸습니다.');
+            }
+        }
+
+        function openEditModal(post) {
+            document.getElementById('modalTitle').innerText = '게시글 수정';
+            document.getElementById('postId').value = post.id;
+            document.getElementById('title').value = post.title;
+            document.getElementById('author').value = post.author;
+            document.getElementById('password').value = post.password; // Pre-fill or keep same
+            document.getElementById('content').value = post.content;
+            
+            closeModal('detailModal');
+            document.getElementById('writeModal').style.display = 'flex';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        };
+
+        renderBoard();
+    </script>
+</body>
+</html>
